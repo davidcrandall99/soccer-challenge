@@ -4,9 +4,9 @@
   "description": "challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-db": "mkdir database && cd database && touch database.db", //use this to create a database for development
-    "remove-db": "rm -R database" // use this to remove your development database
+    "test": "jest --passWithout",
+    "generate-db": "mkdir database && cd database && touch database.db",
+    "remove-db": "rm -R database"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/davidcrandall99/soccer-challenge#readme",
   "dependencies": {
     "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }
