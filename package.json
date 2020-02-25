@@ -1,0 +1,24 @@
+{
+  "name": "soccer-challenge",
+  "version": "1.0.0",
+  "description": "challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-db": "mkdir database && cd database && touch database.db", //use this to create a database for development
+    "remove-db": "rm -R database" // use this to remove your development database
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidcrandall99/soccer-challenge.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidcrandall99/soccer-challenge/issues"
+  },
+  "homepage": "https://github.com/davidcrandall99/soccer-challenge#readme",
+  "dependencies": {
+    "sqlite3": "^4.1.1"
+  }
+}
