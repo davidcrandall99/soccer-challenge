@@ -18,6 +18,7 @@ If scores have been previously entered, the scores will be displayed
 `--file` or `-f /path/to/file.txt`: *String*, specifies a filepath to a text file containing the games/matches
 
 `--string` or `-s <simple string>`: *String* the literal entry of one game at a time.
+___
 
 ### Using '-s' or '--string'
 
@@ -28,6 +29,7 @@ If using `-s` or `--string`, you must enter your string in the following format,
 I.e: 
 
 `San Jose Earthquakes 3, Santa Cruz Slugs 3`
+___
 
 ### Using '-f' or '--file'
 
