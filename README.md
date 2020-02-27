@@ -1,7 +1,6 @@
 # soccer-challenge
 
 ## Installation
-___
 First, make sure you have **NodeJS** installed
 
 Next, `cd` into this project, and run `npm i -g`
@@ -9,7 +8,9 @@ Next, `cd` into this project, and run `npm i -g`
 ## Usage
 
 Open a terminal and run `get-scores`
+
 If no scores have been entered, it will return nothing
+
 If scores have been previously entered, the scores will be displayed
 
 ## Parameters
@@ -21,6 +22,7 @@ If scores have been previously entered, the scores will be displayed
 ### Using '-s' or '--string'
 
 If using `-s` or `--string`, you must enter your string in the following format, and in quotes:
+
 `<team1 name> <team1 score>, <team2 name> <team2 score>`
 
 I.e: 
@@ -30,8 +32,11 @@ I.e:
 ### Using '-f' or '--file'
 
 If using `-f` or `--file`, specify the `path` of the text file. 
+
 Within the text file, you must enter **each game in each line**. You should enter them in **ascending chronological order**, meaning game 1 will be on line 1.
+
 Each line should match the following syntax:
+
 `<team1 name> <team1 score>, <team2 name> <team2 score>`
 
 I.e, your text file could look like: 
