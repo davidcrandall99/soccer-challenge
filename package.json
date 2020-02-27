@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "challenge",
   "main": "index.js",
+  "bin": {
+    "get-scores": "bin/get-scores"
+  },
+  "files": [
+    "bin/",
+    "utils/",
+    "index.js"
+  ],
+
   "scripts": {
-    "test": "jest --passWithout",
+    "test": "jest --passWithoutTests",
     "generate-db": "mkdir database && cd database && touch database.db",
     "remove-db": "rm -R database"
   },
@@ -19,6 +28,9 @@
   },
   "homepage": "https://github.com/davidcrandall99/soccer-challenge#readme",
   "dependencies": {
+    "arg": "^4.1.3",
+    "esm": "^3.2.25",
+    "inquirer": "^7.0.4",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
