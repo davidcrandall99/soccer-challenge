@@ -13,7 +13,7 @@
   ],
 
   "scripts": {
-    "test": "jest --passWithoutTests",
+    "test": "jest --passWithNoTests",
     "generate-db": "mkdir database && cd database && touch database.db",
     "remove-db": "rm -R database"
   },
