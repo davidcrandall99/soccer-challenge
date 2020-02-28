@@ -2,7 +2,8 @@
 /**
  * 
  * parseGames(data)
- *  This parses a string of data -- it can be single or multiline
+ *  This parses a string of data -- it can be single or multiline.
+ * The script will return 'false' if there is an issue with the data, specifically, if there are not enough teams in a game or if the score is not a number.
  */
 let parseGames = x => {
 	if (!x || x === false) {
@@ -23,15 +24,11 @@ let parseGames = x => {
 		 })
 	)
 	game = games[0];
-	
-	//* quick validate scores. Team names can have numbers in them, but scores cannot have letters. 
-	//* This at least checks if the value is a number before returning data. A better approach would be to regex match integers
 	for (i in games) {
 		if (Number.isNaN(games[i][0].score)|| Number.isNaN(games[i][1].score)) {
 			return false;
 		}
 	}
-	console.log('Data successfully parsed');
 	return games;
  } catch(err) {
 	 console.log('There was a problem with the data you entered. Please make sure it is formatted correctly')
@@ -41,6 +38,8 @@ let parseGames = x => {
 
 module.exports = parseGames;
 
+
+//test
 parseGames(`San Jose Earthquakes 3, Santa Cruz Slugs 3
 Capitola Seahorses 1, Aptos FC 0
 Felton Lumberjacks 2, Monterey United 0
