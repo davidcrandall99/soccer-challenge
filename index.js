@@ -13,12 +13,22 @@ export function cli(args) {
 		console.info('Sample help text')
 		return;
 	}
+
+	//only one argument allowed besides help
+	if(options.string && options.textfile) {
+		console.error('too many arguments. choose either a string input or a textfile input.')
+		return;
+	}
+
 	//if the user passes a text file
 	if (options.textfile !== false) {
 		textInput = getTextFile(options.textfile)
 	}
+
+	//if the user passes a string
 	if (options.string !== false) {
 		textInput = options.string;
+		return;
 	}
 	console.log(textInput)
 }
