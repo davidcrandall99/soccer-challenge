@@ -2,10 +2,13 @@
 const fs = require('fs');
 
 let createDatabase = () => {
-	fs.writeFileSync('./../database/matchdays.db', (data, err)=> {
-		console.log(data);
-		console.error(err);
-	});
+	try {
+		fs.writeFileSync('./../matchdays.db','');
+	} catch(err) {
+		console.error('ERROR', err);
+		return false;
+	}
+	return true;
 }
-
+createDatabase();
 module.exports = createDatabase

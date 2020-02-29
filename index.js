@@ -1,29 +1,24 @@
-import arg from 'arg';
-
-function parseArgs(rawArgs) {
-	//setup some basic args to pass
-	// this will include strings of text, as well as text files
-	const args = arg(
-		{
-			'--filepath': String,
-			'--string': String,
-			'-f': '--filepath',
-			'-s': '--string',
-			'--help': Boolean,
-			'-h': '--help'
-		},
-		{
-			argv: rawArgs.slice(2),
-		}
-	);
-	return {
-		games: args['--filepath'] || args['--string'] || null
-	};
-}
+const createTable = require('./utils/createTable')
+const createDatabase = require('./utils/createTable');
+const getTextFile = require('./utils/getTextFile')
+const parseGames = require('./utils/parseGames')
+const parseArguments = require('./utils/parseArguments')
 
 
 export function cli(args) {
-	let options = parseArgs(args);
-	console.log("It works motherfucker:");
-	console.log(options);
+	let options = parseArguments(args);
+	var textInput;
+	//if the user asks for help
+	if (options.help === true) {
+		console.info('Sample help text')
+		return;
+	}
+	//if the user passes a text file
+	if (options.textfile !== false) {
+		textInput = getTextFile(options.textfile)
+	}
+	if (options.string !== false) {
+		textInput = options.string;
+	}
+	console.log(textInput)
 }

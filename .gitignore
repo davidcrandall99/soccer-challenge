@@ -107,3 +107,4 @@ database/
 package-lock
 package-lock.json
 .vscode
+matchdays.db
