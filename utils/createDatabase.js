@@ -3,7 +3,7 @@ const fs = require('fs');
 
 let createDatabase = () => {
 	try {
-		fs.writeFileSync('./../matchdays.db','');
+		fs.writeFileSync('matchdays.db','');
 	} catch(err) {
 		console.error('ERROR', err);
 		return false;
