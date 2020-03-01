@@ -13,7 +13,7 @@ let readRows = async (x, callback) => {
 			if (err) {
 				console.log(err)
 			}
-			console.log(rows)
+			// console.log(rows)
 		});
 	} catch (e) {
 		return 'fuck';

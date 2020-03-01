@@ -12,16 +12,9 @@ db.all("SELECT name FROM sqlite_master WHERE type='table'", (err, data) => {
 });
 
 
-let callBackFunction = (data) => {
-	console.log(data);
-}
 
 let getTables = () => {
 
 }
-
-
-
-//getTables(callback)
 
 module.exports = getTables;

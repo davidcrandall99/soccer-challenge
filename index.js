@@ -1,6 +1,5 @@
 const createTable = require('./utils/createTable')
 const insertRow = require('./utils/insertRow');
-const readRows = require('./utils/readRows')
 const getTextFile = require('./utils/getTextFile')
 const parseGames = require('./utils/parseGames')
 const parseArguments = require('./utils/parseArguments')
@@ -61,5 +60,9 @@ export async function cli(args) {
 			await insertRow(matchDay, dataset);			
 		}
 	}
+
+
+	
+
 
 }
