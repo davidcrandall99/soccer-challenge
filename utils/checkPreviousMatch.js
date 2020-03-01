@@ -7,14 +7,14 @@
 const sqlite3 = require('sqlite3').verbose();
 const readRows = require('./readRows');
 
-let isInMatchday = (matchDay, team1, team2) => {
+let isInMatchday = async (matchDay, team1, team2) => {
 	let db = new sqlite3.Database('matchdays.db', (err) => {
 		if (err) {
 			console.error(err);
 			return false;
 		}
 	});
-	let rows = readRows(matchDay);
+	let rows = await readRows(matchDay);
 	
 	for (i in rows) {
 

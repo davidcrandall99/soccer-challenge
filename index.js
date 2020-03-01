@@ -40,10 +40,10 @@ export async function cli(args) {
 	var matchDay = 1;
 	if (textInput) {
 		//parse the games
-		textInput = parseGames(textInput);
+		textInput = await parseGames(textInput);
 		for (i in textInput) {
 			
-			createTable(matchDay); // create the table for the database if it doesn't exist			
+			await createTable(matchDay); // create the table for the database if it doesn't exist			
 
 			var team1 = textInput[i][0].team;
 			var team1score = parseInt(textInput[i][0].score);
@@ -52,15 +52,20 @@ export async function cli(args) {
 			let dataset = [team1, team1score, team2, team2score];
 
 			//check if either of the teams in the current match have played in the last match day
-			var newMatchDay = checkPreviousMatch(matchDay, team1, team2); 
+			var newMatchDay = await checkPreviousMatch(matchDay, team1, team2); 
 			if(newMatchDay === true) {
 				console.log('match!')
 				matchday = matchday++;
 			}
 
-			insertRow(matchDay, dataset);			
+			await insertRow(matchDay, dataset);			
 		}
 	}
-	console.log(readRows(matchDay)) 
+	let rows = [];
+	let rowCB = (x) => {
+		rows.push(x);
+	}
+	await readRows(matchDay, rowCB).then(x=>{return x});
+	console.log(rows)
 
 }
