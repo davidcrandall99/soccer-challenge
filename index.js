@@ -61,11 +61,5 @@ export async function cli(args) {
 			await insertRow(matchDay, dataset);			
 		}
 	}
-	let rows = [];
-	let rowCB = (x) => {
-		rows.push(x);
-	}
-	await readRows(matchDay, rowCB).then(x=>{return x});
-	console.log(rows)
 
 }
