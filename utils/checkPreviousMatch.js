@@ -10,6 +10,7 @@ const readRows = require('./readRows');
 let isInMatchday = async (matchDay, team1, team2) => {
 	var final;
 	let callBackFunction = (x) => {
+		console.log(x)
 		return x;
 	}
 	await readRows(matchDay, callBackFunction);

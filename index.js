@@ -38,6 +38,7 @@ export async function cli(args) {
 	//set the matchday
 	var matchDay = 1;
 	if (textInput) {
+		
 		//parse the games
 		textInput = await parseGames(textInput);
 		for (i in textInput) {
@@ -65,6 +66,4 @@ export async function cli(args) {
 		console.log('no text input')
 	}
 	
-	getTables();
-
 }
