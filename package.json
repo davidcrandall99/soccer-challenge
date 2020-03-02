@@ -1,0 +1,40 @@
+{
+  "name": "soccer-challenge",
+  "version": "1.0.0",
+  "description": "challenge",
+  "main": "index.js",
+  "bin": {
+    "get-scores": "bin/get-scores"
+  },
+  "files": [
+    "bin/",
+    "utils/",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "generate-db": "touch matchdays.db",
+    "remove-db": "rm matchdays.db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidcrandall99/soccer-challenge.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidcrandall99/soccer-challenge/issues"
+  },
+  "homepage": "https://github.com/davidcrandall99/soccer-challenge#readme",
+  "dependencies": {
+    "arg": "^4.1.3",
+    "esm": "^3.2.25",
+    "inquirer": "^7.0.4",
+    "sqlite": "^3.0.3",
+    "sqlite-async": "^1.0.12",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
