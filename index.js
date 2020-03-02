@@ -61,8 +61,10 @@ export async function cli(args) {
 		}
 	}
 
-
+	else {
+		console.log('no text input')
+	}
 	
-
+	getTables();
 
 }

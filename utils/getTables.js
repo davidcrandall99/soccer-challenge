@@ -8,7 +8,8 @@ let db = new sqlite3.Database('matchdays.db', (err) => {
 });
 
 db.all("SELECT name FROM sqlite_master WHERE type='table'", (err, data) => {
-	return data;
+	// return data;
+	console.log(data);
 });
 
 

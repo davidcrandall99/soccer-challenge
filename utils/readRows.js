@@ -5,18 +5,19 @@ let db = new sqlite3.Database('matchdays.db', (err) => {
 		return false;
 	}
 });
-var xf = [];
+
 
 let readRows = async (x, callback) => {
 	try {
-		await db.all(`SELECT * FROM Matchday${x}`, function (err, rows) {
+		return await db.all(`SELECT * FROM Matchday${x}`, function (err, rows) {
 			if (err) {
 				console.log(err)
 			}
-			// console.log(rows)
+			callback(rows)
 		});
 	} catch (e) {
-		return 'fuck';
+		console.log(e);
+		return false;
 	}
 }
 module.exports = readRows;
